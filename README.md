@@ -17,12 +17,8 @@ DDMStatusApp sits in the menu bar and shows:
 
 ## Screenshot
 
-```
 
 <img width="335" height="429" alt="Capture d’écran 2026-02-16 à 16 19 44" src="https://github.com/user-attachments/assets/a28b81d9-b0f4-489b-97a1-2943674c6965" />
-
-
-```
 
 ## Requirements
 
