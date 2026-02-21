@@ -71,14 +71,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// - Colored number showing days remaining until forced update
     /// - Gray dash when status is unknown
     func createStatusIcon() -> NSImage {
-        let size = NSSize(width: 22, height: 22)
+        let size = NSSize(width: 20, height: 20)
         let image = NSImage(size: size, flipped: false) { rect in
             
             let color: NSColor
             let text: String
             
             if self.ddmManager.isUpToDate {
-                color = .systemGreen
+                color = .labelColor
                 text = "✓"
             } else if let days = self.ddmManager.daysRemaining {
                 text = "\(days)"
@@ -384,7 +384,7 @@ struct DDMStatusView: View {
                       ? "checkmark.circle.fill"
                       : "arrow.down.circle.fill")
                     .font(.title)
-                    .foregroundColor(ddmManager.isUpToDate ? .green : statusColor)
+                    .foregroundColor(ddmManager.isUpToDate ? .primary : statusColor)
                 
                 VStack(alignment: .leading) {
                     Text(ddmManager.isUpToDate ? "macOS is up to date" : "Update required")
@@ -420,7 +420,7 @@ struct DDMStatusView: View {
                         if ddmManager.updateStaged {
                             HStack {
                                 Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.green)
+                                    .foregroundColor(.primary)
                                 Text("Update downloaded")
                                     .font(.caption)
                             }
