@@ -384,7 +384,7 @@ struct DDMStatusView: View {
                       ? "checkmark.circle.fill"
                       : "arrow.down.circle.fill")
                     .font(.title)
-                    .foregroundColor(ddmManager.isUpToDate ? .primary : statusColor)
+                    .foregroundColor(ddmManager.isUpToDate ? .green : statusColor)
                 
                 VStack(alignment: .leading) {
                     Text(ddmManager.isUpToDate ? "macOS is up to date" : "Update required")
